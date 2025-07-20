@@ -1,0 +1,213 @@
+/* Reset and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background and animation */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+  scroll-behavior: smooth;
+  padding-bottom: 60px;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Header section */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #f953c6, #b91d73);
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+  object-fit: cover;
+}
+
+/* Typing effect */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background: white;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Navigation Bar */
+nav {
+  background: #b91d73;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: white;
+  color: #b91d73;
+  box-shadow: 0 0 10px white;
+}
+
+/* Section container */
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  color: #b91d73;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f953c6;
+  padding-bottom: 0.4rem;
+}
+
+section h3 {
+  color: #333;
+  margin-top: 1rem;
+}
+
+section ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Social and Contact */
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  color: #b91d73;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #b91d73;
+}
+
+.github-link {
+  font-family: monospace;
+  word-break: break-all;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #b91d73;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+
+  section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 110px;
+    height: 110px;
+  }
+
+  .social-links a {
+    margin: 0.5rem;
+  }
+}
